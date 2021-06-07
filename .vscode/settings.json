@@ -1,0 +1,17 @@
+{
+  "mochaExplorer.files": "test/**/*.ts",
+  "mochaExplorer.require": "ts-mocha",
+  "mochaExplorer.exit": true,
+  "mochaExplorer.timeout": 5000,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
+}
