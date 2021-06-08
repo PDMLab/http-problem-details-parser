@@ -1444,6 +1444,11 @@ http-cache-semantics@^4.0.0:
   resolved "https://registry.yarnpkg.com/http-cache-semantics/-/http-cache-semantics-4.1.0.tgz#49e91c5cbf36c9b94bcfcd71c23d5249ec74e390"
   integrity sha512-carPklcUh7ROWRK7Cv27RPtdhYhUsela/ue5/jKzjegVvXDqM2ILE9Q2BGn9JZJh1g87cp56su/FgQSzcWS8cQ==
 
+http-problem-details@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/http-problem-details/-/http-problem-details-0.1.5.tgz#f8f94f4ab9d4050749e9f8566fb85bb8caa2be56"
+  integrity sha512-GHxfQZ0POP4FWbAM0guOyZyJNWwbLUXp+4XOJdmitS2tp3gHVSatrSX59Yyq/dCkhk4KiGtTWIlXZC83yCkBkA==
+
 human-signals@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/human-signals/-/human-signals-1.1.1.tgz#c5b1cd14f50aeae09ab6c59fe63ba3395fe4dfa3"
