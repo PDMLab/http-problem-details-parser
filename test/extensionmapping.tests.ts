@@ -6,12 +6,19 @@ import status400 from './json/status-400.json'
 // Idee: Type Guard + Typ vom ProblemDocument type
 
 type ValidationProblemDocument = ProblemDocument & {
+  type: 'https://example.net/validation-error'
   'invalid-params': {
     name: string
     reason: string
   }[]
 }
 
+function isValidationProblemDocument(
+  value: unknown
+): value is ValidationProblemDocument {
+  const x = value as ProblemDocument
+  return x.type === 'https://example.net/validation-error'
+}
 const mappers: HttpProblemExtensionMapper[] = [
   {
     type: 'https://example.net/validation-error',
@@ -28,6 +35,18 @@ describe('mapExtensions', (): void => {
     const result = mapExtensions(status400, document, mappers)
     it('should map them as extension', (done) => {
       should.exist(result['invalid-params'])
+      done()
+    })
+  })
+})
+
+describe('type guard', (): void => {
+  describe('should work', (): void => {
+    const document = fromObject(status400, mappers)
+    it('should ', (done) => {
+      if (isValidationProblemDocument(document)) {
+        document['invalid-params'].length.should.equal(2)
+      }
       done()
     })
   })
