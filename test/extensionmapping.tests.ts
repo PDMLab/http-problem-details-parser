@@ -19,6 +19,7 @@ function isValidationProblemDocument(
   const x = value as ProblemDocument
   return x.type === 'https://example.net/validation-error'
 }
+
 const mappers: HttpProblemExtensionMapper[] = [
   {
     type: 'https://example.net/validation-error',
@@ -47,6 +48,24 @@ describe('type guard', (): void => {
       if (isValidationProblemDocument(document)) {
         document['invalid-params'].length.should.equal(2)
       }
+      done()
+    })
+  })
+})
+
+describe('discriminated union', (): void => {
+  describe('should work', (): void => {
+    const document = fromObject(status400, mappers)
+    it('should ', (done) => {
+      switch (document.type) {
+        case 'https://example.net/validation-error':
+          document['invalid-params'].length.should.equal(2)
+          break
+
+        default:
+          break
+      }
+
       done()
     })
   })
