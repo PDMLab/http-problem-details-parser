@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "outDir": "dist",
+    "baseUrl": ".",
+    "declaration": true,
+    "paths": {
+      "*": ["node_modules/*", "src/types/*"]
+    },
+    "target": "es6",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. */
+    "allowJs": false,
+    /* Allow javascript files to be compiled. */
+    "checkJs": false,
+    /* Report errors in .js files. */
+    "sourceMap": true,
+    /* Generates corresponding '.map' file. */
+    "strict": true,
+    /* Allow implicit any */
+    "noImplicitAny": false,
+    /* Raise error on expressions and declarations with an implied 'any' type. */
+    "strictFunctionTypes": true,
+    /* Enable strict checking of function types. */
+    "allowSyntheticDefaultImports": true,
+    /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking. */
+    "typeRoots": ["node_modules/@types"],
+    "resolveJsonModule": true
+  },
+  "include": ["types", "src/**/*.ts"],
+  "exclude": ["node_modules"]
+}

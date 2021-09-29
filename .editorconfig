@@ -1,0 +1,26 @@
+root = false
+
+[**/**.yml]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[**/**.ts]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[**/**.js]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[**/**.html]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+
+[**/**.json]
+indent_style = space
+indent_size = 2
+insert_final_newline = true
