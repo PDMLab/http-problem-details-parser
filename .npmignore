@@ -1,0 +1,29 @@
+# ignore docs
+readme.md
+
+# ignore all files in the test/ directory and test settings
+test/
+jest.config.js
+
+# ignore EditorConfig, ESLint, Prettier config
+.editorconfig
+.eslintrc.json
+.eslintrc.js
+.prettierrc.js
+commitlint.config.js
+
+# JetBrains IDE settings
+.idea
+
+# VS Code settings
+.vscode
+
+# GitHub actions
+.github
+
+# VuePress
+.cache
+.temp
+
+## Husky
+.husky
