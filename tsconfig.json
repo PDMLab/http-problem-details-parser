@@ -28,6 +28,6 @@
     "typeRoots": ["node_modules/@types"],
     "resolveJsonModule": true
   },
-  "include": ["types", "src/**/*.ts", "test"],
+  "include": ["types", "src/**/*.ts"],
   "exclude": ["node_modules"]
 }
