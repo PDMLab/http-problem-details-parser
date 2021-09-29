@@ -1,7 +1,15 @@
 import { ProblemDocument, ProblemDocumentExtension } from 'http-problem-details'
 
+export type ProblemObject = {
+  status: number
+  title: string
+  detail?: string
+  type: string
+  instance?: string
+} & Record<string, unknown>
+
 export const fromObject = (
-  object: any,
+  object: ProblemObject,
   mappers?: HttpProblemExtensionMapper[]
 ): ProblemDocument => {
   const { status, title, detail, type, instance } = object
@@ -18,19 +26,21 @@ export const fromObject = (
 export const fromJSON = (
   json: string,
   extensionMappers?: HttpProblemExtensionMapper[]
-): ProblemDocument => fromObject(JSON.parse(json))
+): ProblemDocument => fromObject(JSON.parse(json), extensionMappers)
 
 export type HttpProblemExtensionMapper = {
   type: string
-  map: (object: any) => ProblemDocumentExtension
+  map: (object: Record<string, unknown>) => ProblemDocumentExtension
 }
 
 export const mapExtensions = (
-  object: any,
+  object: Record<string, unknown>,
   document: ProblemDocument,
   mappers: HttpProblemExtensionMapper[]
 ): ProblemDocument => {
-  const mapper = mappers.find((m) => m.type === document.type)
+  const mapper = mappers.find(
+    (m: HttpProblemExtensionMapper): boolean => m.type === document.type
+  )
   const extension = mapper?.map(object)
-  return new ProblemDocument(document, extension!)
+  return new ProblemDocument(document, extension)
 }
