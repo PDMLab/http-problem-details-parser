@@ -1,0 +1,5 @@
+{
+  "type": "https://example.net/not-found",
+  "status": 404,
+  "title": "Customer not found."
+}
