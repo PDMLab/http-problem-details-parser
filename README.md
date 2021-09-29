@@ -54,7 +54,21 @@ const result = fromJSON(status400JSON)
 }
 ```
 
-when calling `fromJSON()` again, the `invalid-params` extension gets parsed as well.
+You can now specify a mapper to map the extension `invalid-params`:
+
+```typescript
+const mappers: HttpProblemExtensionMapper[] = [
+  {
+    type: 'https://example.net/validation-error',
+    map: (object: any) =>
+      new ProblemDocumentExtension({
+        'invalid-params': object['invalid-params']
+      })
+  }
+]
+```
+
+when calling `fromJSON(status400JSON, mappers)`, the `invalid-params` extension gets parsed as well.
 
 If you want to handle the `ProblemDocument` instances created above later on, it is recommended to create types for them.
 
