@@ -30,7 +30,7 @@
     "errors"
   ],
   "author": "Alexander Zeitler <alexander.zeitler@pdmlab.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/PDMLab/http-problem-details-parser/issues"
   },
