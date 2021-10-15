@@ -1,6 +1,6 @@
 {
   "name": "http-problem-details-parser",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "HTTP Problem Details parser for JavaScript/TypeScript clients",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
