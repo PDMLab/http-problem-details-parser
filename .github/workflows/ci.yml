@@ -9,23 +9,23 @@ on:
       - main
 jobs:
   lint:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Lint
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - run: yarn
       - run: yarn lint
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Build + Test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: '18'
       - run: yarn
       - run: yarn build
       - run: yarn test
